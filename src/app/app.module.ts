@@ -1,16 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { AngularDraggableModule } from 'angular2-draggable';
+
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ExtendedPdfViewerComponent } from './extended-pdf-viewer/extended-pdf-viewer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
+    ExtendedPdfViewerComponent,
+    AngularDraggableModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PdfViewerModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

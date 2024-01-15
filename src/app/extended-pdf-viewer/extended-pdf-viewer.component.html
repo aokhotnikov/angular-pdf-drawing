@@ -1,0 +1,26 @@
+<div class="buttons-wrapper">
+  <button (click)="enableDrawing()">Drawing is {{isDrawEnabled() ? 'Enabled' : 'Disabled'}}</button>
+  <button (click)="enableDragging()">Dragging is {{isDragEnabled() ? 'Enabled' : 'Disabled'}}</button>
+  <div>
+    <button (click)="drawSrv.zoom.set(drawSrv.zoom() - 0.1)">-</button>
+    {{drawSrv.zoom() | number:'1.1-1'}}
+    <button (click)="drawSrv.zoom.set(drawSrv.zoom() + 0.1)">+</button>
+  </div>
+
+</div>
+
+<div class="pdf-container">
+  <pdf-viewer #pdfviewer [src]="'/assets/pdfs/Bootstrap-vs-Material-Design-vs-Prime-vs-Tailwind.pdf'"
+              [rotation]="0"
+              [original-size]="true"
+              [zoom]="drawSrv.zoom()"
+              [show-all]="true"
+              [fit-to-page]="false"
+              [stick-to-page]="false"
+              [render-text]="true"
+              [external-link-target]="'blank'"
+              [show-borders]="false"
+              (page-rendered)="onPageRendered($event)"
+              (after-load-complete)="loadComplete($event)"
+  ></pdf-viewer>
+</div>

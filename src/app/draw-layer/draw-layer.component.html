@@ -1,0 +1,7 @@
+<!--<div class="editor-layer">-->
+  @if (!isHidden) {
+    <div class="drawing-layer" drawRectangle (rectangleDrawn)="onRectangleDrawn($event)">
+       <canvas class="editor-canvas" aria-label="Созданное пользователем изображение" style="visibility: visible;"></canvas>
+    </div>
+  }
+<!--</div>-->

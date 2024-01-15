@@ -1,0 +1,15 @@
+<div #divElement class="draggable-layer"
+     [ngResizable]="!dragDisabled"
+     [cdkDragDisabled]="dragDisabled"
+     [rzHandles]="'all'"
+     cdkDrag
+     rzContainment=".page"
+     cdkDragBoundary=".page"
+>
+  <ng-container *ngIf="!dragDisabled">
+    <div class="resizer top-left"></div>
+    <div class="resizer bottom-left"></div>
+    <div class="resizer top-right"></div>
+    <div class="resizer bottom-right"></div>
+  </ng-container>
+</div>
